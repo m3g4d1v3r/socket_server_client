@@ -75,7 +75,6 @@ awaitable<void> echo(tcp::socket socket) {
 	size_t counter = 0;
 	random_prefix = gen_random_prefix(PREFIX_SIZE);
 	filename = random_prefix + "_" + get_current_time();
-	cout << filename << endl;
 
 	while (true) { // Until EOF exception
 		bytes_read = co_await socket.async_read_some(buffer(data, sizeof(data)), use_awaitable);
@@ -90,7 +89,6 @@ awaitable<void> echo(tcp::socket socket) {
 			counter -= ARRAY_BYTES;
 			usleep(1000);
 			filename = random_prefix + "_" + get_current_time();
-			cout << endl << filename << endl;
 			write_data_to_file(filename, data, j, bytes_read);
 		}
 	}
