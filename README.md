@@ -15,8 +15,8 @@ And in another terminal (or client machine), run the following command:
 
 you can run the client application with an example, such as:
 
-```./client examples/input0```
+```./client < examples/input0```
 
 or 
 
-```./client examples/input1```
+```./client < examples/input1```
